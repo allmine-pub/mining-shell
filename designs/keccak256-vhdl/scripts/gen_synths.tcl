@@ -99,7 +99,7 @@ set coreClk [create_clock -period 2.25 -name clkgen0_out -waveform {0.000 1.000}
 
 set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets $miningCoreCellPath/clkgen*/mmcm*_out*]
 set_false_path -to [get_pins $miningCoreCellPath/clkgen*/mmcm_mux/CE*]
-set_false_path -from [get_pins $miningCoreCellPath/core/input/job_data_reg\[*\]/C] -to $coreClk
+set_false_path -from [get_pins $miningCoreCellPath/core/input/job_data_reg\[*\]*/C] -to $coreClk
 set_false_path -to [get_pins $miningCoreCellPath/core/input/valid_capture_reg\[*\]/D]
 
 set pbCore_blake [create_pblock pbCore_blake]
